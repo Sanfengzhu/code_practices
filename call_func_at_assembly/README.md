@@ -1,1 +1,2 @@
-init document
+该测试用于分析在未优化状态下函数调用过程在汇编层级是如何进行的。
+具体分析的过程见：http://baobaoyeye.top/wordpress/index.php/2017/02/08/%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E5%9C%A8%E6%B1%87%E7%BC%96%E5%B1%82%E6%AC%A1%E4%B8%8A%E7%9A%84%E5%88%86%E6%9E%90/
