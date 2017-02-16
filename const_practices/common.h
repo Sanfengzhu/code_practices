@@ -1,5 +1,14 @@
 #include <stdio.h>
+#include <string>
+
+void func_a();
 
 void func_b();
 
-void func_a();
+int func_c();
+
+double func_d();
+
+void func_e();
+
+std::string func_f();
