@@ -12,3 +12,5 @@ double func_d();
 void func_e();
 
 std::string func_f();
+
+void func_c_a();

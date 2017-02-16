@@ -50,5 +50,6 @@ int main(){
 	func_a();	
 	func_b();
 	func_e();
+	func_c_a();
 	return 0;
 }
