@@ -4,5 +4,5 @@
 * [关于const的用法](https://github.com/baobaoyeye/code_practices/tree/master/const_practices)
 * [UNIX环境高级编程练习](https://github.com/baobaoyeye/code_practices/tree/master/unix)
 * [glog练习](https://github.com/baobaoyeye/code_practices/tree/master/glog_test)
-* [C++ virual关键字分析](https://github.com/baobaoyeye/code_practices/tree/master/virual_t)
+* [C++ virtual关键字分析](https://github.com/baobaoyeye/code_practices/tree/master/virtual_t)
 
