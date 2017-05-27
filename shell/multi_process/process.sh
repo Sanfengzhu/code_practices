@@ -1,3 +1,15 @@
+
+# processbar <current> <total>
+processbar() {
+  	local current=$1; local total=$2;
+  	local maxlen=80; local barlen=66; local perclen=14;
+  	local format="%-${barlen}s%$((maxlen-barlen))s"
+  	local perc="[$current/$total]"
+  	local progress=$((current*barlen/total))
+  	local prog=$(for i in `seq 0 $progress`; do printf '#'; done)
+  	printf "\r$format" $prog $perc
+}
+
 # curl call one by one from query_file
 function mulit_process(){
     SEND_THREAD_NUM=40   #设置线程数，在这里所谓的线程，其实就是几乎同时放入后台（使用&）执行的进程。
