@@ -1,0 +1,61 @@
+@startuml
+title Tera Master & Tablet Status
+
+state Master {
+  NotInited --> IsSecondary
+  IsSecondary --> OnRestore
+  IsSecondary --> OnWait
+  OnRestore --> OnWait
+  OnWait --> OnRestore
+  OnRestore --> IsRunning
+  OnRestore --> IsReadonly
+  IsReadonly --> IsRunning
+  IsRunning --> IsReadonly
+}
+
+state TabletServer {
+  TableReady --> TableOffLine
+  TableOffLine --> TableReady
+
+  TableNotInit --> TableReady
+  TableNotInit --> TableOffLine
+
+  TableOnLoad --> TableReady
+  TableOnLoad --> TableOffLine
+  TableOnLoad --> TableLoadFail
+  TableLoadFail --> TableOffLine
+  TableOffLine --> TableOnLoad
+
+  TableReady --> TabletOnSnapshot
+  TabletOnSnapshot --> TableReady
+
+  TableReady --> TabletDelSnapshot
+  TabletDelSnapshot --> TableReady
+
+  TableReady --> TableOnSplit
+  TableOnSplit --> TableReady
+  TableOnSplit --> TableSplitFail
+  TableOnSplit -->TableOffLine
+  TableSplitFail --> TableOnSplit
+
+  TabletDisable --> TableOffLine
+  TableOffLine --> TabletDisable
+
+  TabletPending --> TableReady
+  TableReady --> TabletPending
+  TabletPending --> TableOffLine
+  TableOffLine --> TabletPending
+
+  TableUnLoading --> TableReady
+  TableReady --> TableUnLoading
+  TableUnLoading --> TableOffLine
+  TableUnLoading --> TableOnMerge
+  TableOnMerge --> TableOffLine
+  TableUnLoading --> TableUnLoadFail
+  TableUnLoadFail --> TableOnMerge
+  TableUnLoadFail --> TableOffLine
+}
+
+
+@enduml
+
