@@ -71,12 +71,13 @@ Counter a;
 
 void test(){
     a.Inc();
+    Counter a;
 }
 
 int main(int argc, char *argv[])
 {
-    FILE *f;
     /*
+    FILE *f;
     f = fopen("/proc/26411/statm", "r");
     if (f == NULL) {
         return 0;
@@ -90,7 +91,7 @@ int main(int argc, char *argv[])
     std::cout << mem << std::endl;
     fclose(f);
     */
-    
+    /*
     f = fopen("/proc/1266/net/dev", "r");
     FILE *f1;
     f1 = fopen("/proc/net/dev", "r");
@@ -117,19 +118,24 @@ int main(int argc, char *argv[])
     fclose(f);
     fclose(f1);
 
-    /*
+    */
     int64_t val;
     val = 19;
     
     std::cout << val << "  "
     << atomic_swap64(&val, 12)
     << val << std::endl;
+    int aa = 0;
+    double bb = 5.2;
+    double cc = 0.0;
+    double ret = bb/aa;
+    double ret1 = cc/aa;
+    std::cout << ret << std::endl;
+    std::cout << ret1 << std::endl;
+    test();
+    test();
+    test();
+    test();
     std::cout << a.Get() << " ";
-    a.Inc();
-    a.Get();
-    std::cout << a.Get() << " ";
-    Counter a;
-    std::cout << a.Get() << " ";
-    */
     return 0;
 }
